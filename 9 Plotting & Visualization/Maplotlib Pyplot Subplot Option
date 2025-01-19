@@ -1,0 +1,6 @@
+Argument | Description
+nrows |  Number of rows of subplots
+ncols | Number of columns of subplots
+sharex | All subplots should use the same x-axis ticks (adjusting the xlim will affect all subplots)
+sharey | All subplots should use the same y-axis ticks (adjusting the ylim will affect all subplots) subplot_kw Dictionary of keywords passed to add_subplot call used to create each subplot
+**fig_kw |  Additional keywords to subplots are used when creating the figure, such as plt.subplots(2, 2, figsize=(8, 6))
