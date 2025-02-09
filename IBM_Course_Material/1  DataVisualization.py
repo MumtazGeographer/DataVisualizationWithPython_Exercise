@@ -33,3 +33,17 @@ print(df_can.columns)
 print(df_can.isnull().sum())
 
 print(df_can.describe())
+
+print(df_can.Country)
+
+print(df_can[['Country', 1980, 1981, 1982, 1983, 1984, 1985]]) # returns a dataframe
+
+#print(df.loc[label])
+print(df_can.set_index('Country', inplace=True))
+
+df_can.index.name = None
+print(df_can.loc['Japan'])
+
+print(df_can.iloc[87])
+
+print(df_can[df_can.index == 'Japan'])
