@@ -66,3 +66,25 @@ print(df_can.columns)
 # FILTERING BASED ON A CRITERIA
 condition = df_can['Continent'] == 'Asia'
 print(condition)
+
+
+# 2. pass this condition into the dataFrame
+print(df_can[condition])
+
+
+print(df_can[(df_can['Continent'] == 'Asia') & (df_can['Region']=='Southerrn Asia')])
+
+
+print('data dimensions:', df_can.shape)
+print(df_can.columns)
+df_can.head(2)
+
+# we are using the inline backend
+#%matplotlib inline
+import matplotlib as mpl
+import matplotlib.pyplot as plt
+
+print(mpl.__version__)
+
+print(plt.style.available)
+print(mpl.style.use(['ggplot']))
