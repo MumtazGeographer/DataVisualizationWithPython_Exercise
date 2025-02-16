@@ -63,6 +63,10 @@ print(df_can.iloc[87, [3,4,5,6,7,8]])
 df_can.columns = list(map(str, df_can.columns))
 print(df_can.columns)
 
+# useful for plotting later on
+years = list(map(str, range(1980, 2014)))
+
+
 # FILTERING BASED ON A CRITERIA
 condition = df_can['Continent'] == 'Asia'
 print(condition)
@@ -88,3 +92,45 @@ print(mpl.__version__)
 
 print(plt.style.available)
 print(mpl.style.use(['ggplot']))
+
+haiti = df_can.loc['Haiti', years]
+print(haiti.head())
+
+haiti.index = haiti.index.map(int) # let's change the index values of Haiti to type integer for plotting
+haiti.plot(kind='line')
+
+plt.title('Immigration from Haiti')
+plt.ylabel('Number of immigrants')
+plt.xlabel('Years')
+
+# annotate the 2010 Earthquake.
+# syntax: plt.text(x, y, label)
+plt.text(2000, 6000, '2010 Earthquake') # see note below
+
+plt.show()
+
+df_CI = df_can.loc[['India', 'China'], years]
+df_CI = df_CI.transpose()
+df_CI.plot(kind='line')
+
+plt.show()
+
+# The correct answer is:
+df_CI.index = df_CI.index.map(int)  # let's change the index values of df_CI to type integer for plotting
+df_CI.plot(kind='line')
+
+plt.title('Immigrants from China and India')
+plt.ylabel('Number of Immigrants')
+plt.xlabel('Years')
+
+plt.show()
+
+# The correct answer is:
+df_CI.index = df_CI.index.map(int)  # let's change the index values of df_CI to type integer for plotting
+df_CI.plot(kind='line')
+
+plt.title('Immigrants from China and India')
+plt.ylabel('Number of Immigrants')
+plt.xlabel('Years')
+
+plt.show()
